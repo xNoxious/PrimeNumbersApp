@@ -1,0 +1,62 @@
+services:
+  apigateway:
+    build:
+      context: C:\Users\XelMi\source\repos\PrimeNumbersApp
+      dockerfile: src/APIGateway/Dockerfile
+    container_name: apigateway
+    depends_on:
+    - primenumbers.api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: apigateway
+    ports:
+    - published: 7000
+      target: 80
+    volumes:
+    - /.aspnet/https:/root/.aspnet.https:rw
+    - /.microsoft/usersecrets:/root/.microsoft.usersecrets:rw
+  numbersdb:
+    container_name: numbersdb
+    image: mongo
+    ports:
+    - published: 27017
+      target: 27017
+    restart: always
+    volumes:
+    - /site:/data/db:rw
+  primenumbers.api:
+    build:
+      context: C:\Users\XelMi\source\repos\PrimeNumbersApp
+      dockerfile: PrimeNumbers.API/Dockerfile
+    container_name: primenumbersapi
+    depends_on:
+    - numbersdb
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      NumbersDatabaseSettings:ConnectionString: mongodb://numbersdb:27017
+    image: primenumbersapi
+    ports:
+    - published: 8000
+      target: 80
+    volumes:
+    - /.aspnet/https:/root/.aspnet.https:rw
+    - /.microsoft/usersecrets:/root/.microsoft.usersecrets:rw
+  primenumbersplayground:
+    build:
+      context: C:\Users\XelMi\source\repos\PrimeNumbersApp
+      dockerfile: src/PrimeNumbersPlayground/Dockerfile
+    container_name: primenumbersplayground
+    depends_on:
+    - apigateway
+    - primenumbers.api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ApiSettings:BaseAddress: apigateway
+    image: primenumbersplayground
+    ports:
+    - published: 8001
+      target: 80
+    volumes:
+    - C:\Users\XelMi\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\XelMi\AppData\Roaming\.microsoft\usersecrets:/root/.microsoft.usersecrets:ro
+version: '3.4'

@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Prime Numbers Playground";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Prime Numbers Playground</h1>
+        <br />
+        <p>Hello, this is a small web app that allows you to check whether a number is primary as well as find the next primary number after a given one.</p>
+        <br />
+        <form method="post">
+            <div class="form-group">
+                <label>Enter a number</label>
+                <br />
+                <input type="number" asp-for="GivenNumber" name="number" class="col-sm-2 col-form-label overflow-hidden" aria-describedby="textboxHelp">
+                <br />
+                <small id="textboxHelp" class="form-text text-muted">Please enter a whole number and choose an action below.</small>
+            </div>
+            <input type="submit" asp-page-handler="NumberPrimality" value="Is Prime?" class="btn btn-warning" />
+            <input type="submit" asp-page-handler="NextPrimeNumber" value="Next Prime" class="btn btn-info" />
+            <input type="submit" asp-page-handler="NextPrimeNumberViaDb" value="Next Prime (DB)" class="btn btn-primary" />
+        </form>
+        <br />
+        <h3>@Model.PrimeNumberResult</h3>
+    </div>

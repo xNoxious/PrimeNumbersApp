@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeNumbers.API", "PrimeNumbers.API\PrimeNumbers.API.csproj", "{B3FA57EF-9734-40EB-98B3-98889CAD375F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F1B190AC-481E-4FCD-B9B7-51E73DB3FA76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "src\APIGateway\APIGateway.csproj", "{35E13428-54F9-4800-909C-23537506A93F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{EFD35156-4A7F-4B24-AE47-E7CD6F046C04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeNumbersPlayground", "src\PrimeNumbersPlayground\PrimeNumbersPlayground.csproj", "{F59D1191-2AA4-44B9-891E-BAD8AEA6EFE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbers.API.UnitTest", "src\PrimeNumbers.API.UnitTest\PrimeNumbers.API.UnitTest.csproj", "{E8395DC8-5292-41E7-A47F-52BBCA5C0B0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3FA57EF-9734-40EB-98B3-98889CAD375F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3FA57EF-9734-40EB-98B3-98889CAD375F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3FA57EF-9734-40EB-98B3-98889CAD375F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3FA57EF-9734-40EB-98B3-98889CAD375F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35E13428-54F9-4800-909C-23537506A93F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35E13428-54F9-4800-909C-23537506A93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35E13428-54F9-4800-909C-23537506A93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35E13428-54F9-4800-909C-23537506A93F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD35156-4A7F-4B24-AE47-E7CD6F046C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD35156-4A7F-4B24-AE47-E7CD6F046C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD35156-4A7F-4B24-AE47-E7CD6F046C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD35156-4A7F-4B24-AE47-E7CD6F046C04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F59D1191-2AA4-44B9-891E-BAD8AEA6EFE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F59D1191-2AA4-44B9-891E-BAD8AEA6EFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F59D1191-2AA4-44B9-891E-BAD8AEA6EFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F59D1191-2AA4-44B9-891E-BAD8AEA6EFE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8395DC8-5292-41E7-A47F-52BBCA5C0B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8395DC8-5292-41E7-A47F-52BBCA5C0B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8395DC8-5292-41E7-A47F-52BBCA5C0B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8395DC8-5292-41E7-A47F-52BBCA5C0B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3FA57EF-9734-40EB-98B3-98889CAD375F} = {F1B190AC-481E-4FCD-B9B7-51E73DB3FA76}
+		{35E13428-54F9-4800-909C-23537506A93F} = {F1B190AC-481E-4FCD-B9B7-51E73DB3FA76}
+		{F59D1191-2AA4-44B9-891E-BAD8AEA6EFE0} = {F1B190AC-481E-4FCD-B9B7-51E73DB3FA76}
+		{E8395DC8-5292-41E7-A47F-52BBCA5C0B0F} = {F1B190AC-481E-4FCD-B9B7-51E73DB3FA76}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D429BFDF-B8DB-4107-A244-DB7856BE3110}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,41 @@
+{
+  "ReRoutes": [
+    // Prime Numbers API
+    {
+      "DownstreamPathTemplate": "/api/Primality/GetNumberPrimality/{number}",
+      "DownstreamPathScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "primenumbersapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Primality/GetNumberPrimality/{number}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Primality/GetNextPrimeNumber/{number}",
+      "DownstreamPathScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "primenumbersapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Primality/GetNextPrimeNumber/{number}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Primality/GetNextPrimeNumberViaDb/{number}",
+      "DownstreamPathScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "primenumbersapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Primality/GetNextPrimeNumberViaDb/{number}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ]
+}

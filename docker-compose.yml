@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+    numbersdb:
+        image: mongo
+
+    primenumbers.api:
+        image: ${DOCKER_REGISTRY-}primenumbersapi
+        build:
+            context: .
+            dockerfile: PrimeNumbers.API/Dockerfile
+
+    apigateway:
+        image: ${DOCKER_REGISTRY-}apigateway
+        build:
+            context: .
+            dockerfile: src/APIGateway/Dockerfile
+
+    primenumbersplayground:
+        image: ${DOCKER_REGISTRY-}primenumbersplayground
+        build:
+            context: .
+            dockerfile: src/PrimeNumbersPlayground/Dockerfile
